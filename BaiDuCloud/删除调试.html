@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+<script src="./js/tools.js"></script>
+<script>
+	var datas = tools.store('cloud');
+	console.log(datas); 
+	var hiddenInput = 0;
+	//比如说现在要删除pid为0,名字为"音乐"、"技术"
+	var arr = ["音乐","技术"];
+	
+	function deletedata(hiddenInput,arr){
+		for (var i = 0; i < arr.length; i++) {
+			for (var j = 0; j < datas.files.length; j++) {
+				if(datas.files[j].pid == hiddenInput && datas.files[j].name == arr[i]){
+					var arr1 = [];
+					var hiddenInput1 = datas.files[j].id;
+					for (var k = 0; k < datas.files.length; k++) {
+						if(datas.files[k].pid == hiddenInput1){
+							arr1.push(datas.files[k].name);
+						}
+					}
+					deletedata(hiddenInput1,arr1)
+					datas.files.splice(j,1);
+				}
+			}
+		}
+	}
+	deletedata(0,arr);
+	console.log(datas);
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</script>
+</body>
+</html>
