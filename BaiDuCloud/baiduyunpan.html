@@ -2,11 +2,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>百度云 网盘|黄晶</title>
+<title>百度云网盘 | 苏萧</title>
 <link rel="stylesheet" href="css/reset.css" />
 <link rel="stylesheet" href="css/pubulic.css" />
 <link rel="stylesheet" href="css/baiduyunpan.css" />
-<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon"/>
+<link rel="Shortcut Icon" href="./img/favicon.ico"  type="image/x-icon" />
 </head>
 <body>
 <header class="head clearfix">
@@ -93,7 +93,7 @@
 		</li>
 		<li>
 			<s class="line16 fl"></s>
-			<a href="" class="fl">通知</a>
+			<a href="load.html" class="fl">退出</a>
 		</li>
 		<li>
 			<s class="line16 fl"></s>
@@ -225,7 +225,7 @@
 					<s class="bg"></s>
 					<span id="creat-new">新建文件夹</span>
 				</li>
-				<li>
+				<!-- <li>
 					<s class="bg"></s>
 					<span>离线下载</span>
 				</li>
@@ -234,7 +234,7 @@
 					<span class="">我的设备</span>
 					<span class="send-trep"></span>
 					<span class="send-line line-color"></span>
-				</li>
+				</li> -->
 			</ul>
 			<div class="top-change bg fr">
 				<a href="javascript:;" class="list-gurd"></a>
@@ -243,14 +243,14 @@
 		</div>
 		<div class="right-main">
 			<div class="main-all clearfix" id="main-all">
-				<span class="fl" id="show-all">全部文件</span>
-				<div class="fl" id="handle-folder">
-					<!--<a href="javascript:;">全部文件</a>
+				<div class="fl" id="show-all"><span>全部文件</span></div>
+				<!--<div class="fl" id="handle-folder">
+					<a href="javascript:;">全部文件</a>
 					<a href="javascript:;">返回上一级</a>
-					<span class="now-folder">技术</span>-->
-				</div>
+					<span class="now-folder">技术</span>
+				</div>-->
 				<div class="fr">
-					<span class="fr">已全部加载，共</span>
+					<span>已全部加载，共</span>
 					<span class="folder-number"></span>
 					<span>个</span>
 				</div>
@@ -262,29 +262,29 @@
 					<label for="checkall" class="checkall-show">已选中<span id="choice-folder">5</span>个文件/文件夹</label>
 				</form>
 				<ul class="operate-list fl" >
-					<li>
+					<!-- <li>
 						<s class="bg fl"></s>
 						<span class="fl">分享</span>
 					</li>
 					<li>
 						<s class="bg fl"></s>
 						<span class="fl">下载</span>
-					</li>
+					</li> -->
 					<li id="delate">
 						<s class="bg fl"></s>
 						<span class="fl">删除</span>
 					</li>
-					<li>
+					<!-- <li>
 						<s class="bg fl"></s>
 						<span class="fl">推送到云设备</span>
-					</li>
+					</li> -->
 					<li id="rename">
 						<span class="fl">重命名</span>
 					</li>
-					<li id="copyFolder">
+					<!-- <li>
 						<span class="fl">复制到</span>
-					</li>
-					<li>
+					</li> -->
+					<li id="move-to">
 						<span class="fl">移动到</span>
 					</li>
 				</ul>
@@ -293,28 +293,27 @@
 			
 			<div class="folder-box">
 				<span class="create-success">创建文件夹成功</span>
-				<ul class="right-folder clearfix" id="folder-list">
+				<ul class="right-folder clearfix" id="folder-list" draggable="true">
 					<!--<li>
-						<div class="icon">
-							<input type="checkbox"  class="checkInput" />
+						<div>
+							<img src="img/folder.png"/>
+							<span class="folder-check"></span>
 						</div>
-						<strong style="display:block;">123</strong>
-						<div class="clearFix edtor"  style="display:none;">
-							<input type="text" value="123" class="createInputBtn"  />
-							<input type="button" value="√" />
-							<input type="button" value="×" />
-						</div>
+						<span>个人文件夹</span>
 					</li>
 					<li>
-						<div class="icon">
-							<input type="checkbox"  class="checkInput" />
+						<div>
+							<img src="img/folder.png"/>
+							<span class="folder-check"></span>
 						</div>
-						<strong style="display:block;">456</strong>
-						<div class="clearFix edtor"  style="display:none;">
-							<input type="text" value="456" class="createInputBtn"  />
-							<input type="button" value="√" />
-							<input type="button" value="×" />
+						<span>前端资料</span>
+					</li>
+					<li>
+						<div>
+							<img src="img/folder.png"/>
+							<span class="folder-check"></span>
 						</div>
+						<span>随身笔记</span>
 					</li>-->
 				</ul>
 				<ul id="contextmenu"></ul>
@@ -328,116 +327,34 @@
 			<span class="no">取消</span>
 		</div>
 	</div>
-	<div class="treeBox">
-		<header class="treeHeader clearfix">
-			<span class="fl">复制到</span>
-			<span class="fr closeTreeBox">X</span>
-		</header>
-		<ul class="treeList">
-			<!--<li>
-				<h5><span>+</span>一级菜单</h5>
-				<ul>
-					<li>
-						<h5><span>+</span>二级菜单</h5>
-						<ul>
-							<li>
-								<h5><span>+</span>三级菜单</h5>
-							</li>
-							<li>
-								<h5>三级菜单</h5>
-							</li>
-							<li>
-								<h5>三级菜单</h5>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<h5><span>+</span>二级菜单</h5>
-						<ul>
-							<li>
-								<h5>三级菜单</h5>
-							</li>
-							<li>
-								<h5>三级菜单</h5>
-							</li>
-							<li>
-								<h5>三级菜单</h5>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<h5><span>+</span>二级菜单</h5>
-						<ul>
-							<li>
-								<h5>三级菜单</h5>
-							</li>
-							<li>
-								<h5>三级菜单</h5>
-							</li>
-							<li>
-								<h5>三级菜单</h5>
-							</li>
-						</ul>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<h5><span>+</span>一级菜单</h5>
-				<ul>
-					<li>
-						<h5><span>+</span>二级菜单</h5>
-						<ul>
-							<li>
-								<h5>三级菜单</h5>
-							</li>
-							<li>
-								<h5>三级菜单</h5>
-							</li>
-							<li>
-								<h5>三级菜单</h5>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<h5>二级菜单</h5>
-						<ul>
-							<li>
-								<h5>三级菜单</h5>
-							</li>
-							<li>
-								<h5>三级菜单</h5>
-							</li>
-							<li>
-								<h5>三级菜单</h5>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<h5>二级菜单</h5>
-						<ul>
-							<li>
-								<h5>三级菜单</h5>
-							</li>
-							<li>
-								<h5>三级菜单</h5>
-							</li>
-							<li>
-								<h5>三级菜单</h5>
-							</li>
-						</ul>
-					</li>
-				</ul>
-			</li>-->
-		</ul>
-		<div class="treeBtnBox clearfix">
-			<div class="doBtn fl active">确定</div>
-			<div class="donotBtn fr">取消</div>
-		</div>		
+	<input type="hidden" class="hiddenInput" value="0" />
+	<div id="tree-box">
+		<div id="show-box">
+			<ul id="tree-list"></ul>;
+			<div class="tree-handle">
+				<!-- <span id="create-inbox">新建文件夹</span> -->
+				<span id="move-sure">确定</span>
+				<span id="move-cancel">取消</span>
+			</div>
+		</div>
 	</div>
-	<input type="hidden" value="0" class="hiddenInput"  />
+	
 </section>
+<div id="bref">
+	<p>用原生JS模仿百度云，主要完成的功能有，无限新建文件夹、重命名，双击进入子菜单，删除文件夹，拖拽文件夹交换位置，大图小图切换，搜索文件夹，单选，全选，匡选文件夹，文件夹导航栏等功能。主要利用到通过数据渲染页面；正则匹配新建文件夹名字相同的处理，大图小图切换改变布局；通用的函数通过自定义函数封装多次调用；本地存储等知识点。在完成这个作品过程中，遇到一些问题：例如、匡选之后，拖拽功能就没有了，通过查错，排错，最后发现，是因为定位功能有问题，例如实现了文件夹交换位置后，双击有时候会自动交换位置，而不是进入文件夹里面，排查出是因为找到最近的那个文件夹之后，它是一直存在的的，所以，点击就会触发，后面也解决了这个BUG；再例如在新建、重命名等操作的时候，是不能做其他操作的，前面的方法很复杂，性能也不好，后面改变方法，通过点击给自身设定属性值，用作判断条件很简单解决这个问题；还做了一些优化，如碰撞检测，可以设定在最后一个文件和匡选的DIV快碰上的时候才做检测。由于时间有限，右键一些功能未添加，代码优化有待进一步加强。可能会有一些小BUG，也有一些可能是自身知识点欠缺的无法避免的，以后多多学习技术知识点，完善个人技能！！！</p>
+	<span class="close">×</span>
+</div>
 <script src="./js/data.js"></script>
 <script src="./js/tools.js"></script>
+<script src="./js/public.js"></script>
+<script src="./js/contextmenu.js"></script>
+<script src="./js/creatfolder.js"></script>
+<script src="./js/structure.js"></script>
+<script src="./js/getelement.js"></script>
+<script src="./js/method.js"></script>
+<script src="./js/drag.js"></script>
+<script src="./js/move.js"></script>
+<script src="./js/treeList.js"></script>
 <script src="./js/index.js"></script>
 </body>
 </html>

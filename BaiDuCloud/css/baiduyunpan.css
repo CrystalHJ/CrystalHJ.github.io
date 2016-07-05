@@ -430,7 +430,7 @@ body{
 	background: #74c709;
 	position: absolute;
 	left: 27px;
-	top:0;
+	top:4px;
 }
 .pan-rom .rom-num{
 	padding-right: 27px;
@@ -683,24 +683,24 @@ body{
 	position: relative;
 	box-sizing: border-box;
 }
-/*.folder-list li{
+.folder-list li{
 	width: 100%;
 	/*width: 1000px;*/
 }
-/*.folder-list  li img{
+.folder-list  li img{
 	width: 20px;
 	height: 20px;
 }
 .folder-list li input[type=checkbox]{
 	display: none;
-}*/
+}
 #contextmenu{
 	position: fixed;
 	display: none;
-	min-width: 100px;
-	min-height: 50px;
+	min-width: 150px;
+	min-height: 120px;
 	border: 1px solid #000;
-	background: orange;
+	background: deepskyblue;
 	z-index: 9999;
 }
 #contextmenu li{
@@ -712,23 +712,23 @@ body{
 	background: #90908E;
 	color: #fff;
 }
-/*.right-folder li{
+.right-folder li{
 	float: left;
 	width: 120px;
 	/*width: 1000px;*/
-	/*text-align: center;
-	margin-right: 10px;*/
+	text-align: center;
+	margin-right: 10px;
 	/*margin-right: 22px;*/
-/*}*/
+}
 /*.right-folder li div{
 	padding-top: 24px;
-}
-.right-folder li div:nth-of-type(1){
+}*/
+/*.right-folder li div:nth-of-type(1){
 	border: 2px solid transparent;
 	padding-bottom: 10px;
 	position: relative;
-}
-.right-folder li .checkbox{
+}*/
+.right-folder li .checkInput{
 	position: absolute;
 	top: -2px;
 	left: -2px;
@@ -747,20 +747,21 @@ body{
 	background-position:0 -42px ;
 	display: none;
 	/*z-index: 10;*/
-}*/
+}
 /*.right-folder li div:nth-of-type(1):hover{
 	border-color: #2e80dc;
 }
 .right-folder li div:nth-of-type(1):hover span{
 	display:block;
 }*/
-/*.right-folder li .new-folder{
+.right-folder li .new-folder{
 	padding: 0;
 	margin-right: -2px;
 	margin-top: 5px;
 	text-align: center;
 	font-size: 0;
 	padding-bottom: 4px;
+	display: none;
 }
 .right-folder li div .new-name{
 	display: inline-block;
@@ -788,7 +789,7 @@ body{
 .right-folder li span{
 	line-height: 30px;
 	color: #000;
-}*/
+}
 .folder-box{
 	position: relative;
 }
@@ -804,142 +805,192 @@ body{
 	/*opacity: 0.5;*/
 }
 
-#folder-list li {
-	width: 144px;
-	height: 126px;
-	float:left;
-	text-align: center;
-	font-size: 12px;
-}
-#folder-list li strong{
-	line-height: 30px;
-}
-
 .icon {
 	width:90px;
 	height: 92px;
 	margin: 0 auto;
 	background: url(../img/icon.png) no-repeat 16px -77px;
 	/*border: 2px solid #2e80dc;*/
-	border: 2px solid #fff;
+	border: 2px solid transparent;
 	position: relative;
-}
-.icon input{
-	width: 20px;
-	height: 20px;
-	position: absolute;
-	left: 0;
-	top:0;
-	display: none;
 }
 .edtor {
 	text-align: left;
 	margin: 2px -4px 0 0;
 	display: none;
 }
-.edtor input{
+
+.nav_level{
+	color: #06c;
+}
+.nav_level:hover{
+	text-decoration: underline;
+}
+.move-select{
+	position: fixed;
+	background: rgba(51,88,249,0.4);
+	width: 0;
+	height: 0;
+	top: 0;
+	left: 0;
+	z-index: 999;
+}
+/*//小图的class*/
+.convert-list{
+	padding-left: 30px;
+}
+.convert-list li{
+	float: none;
+	padding-top: 10px;
+	height: 40px;
+	border-bottom: 1px solid rgba(0,0,0,0.3);
+	box-sizing: border-box;
+}
+.convert-list li:hover{
+	background: rgba(0,0,0,0.2);
+}
+.convert-list .icon{
+	width: 20px;
+	height: 20px;
 	float: left;
+	margin-left: 25px;
+	background: url(../img/folder.png) no-repeat;
+	background-size: 100% 100%;
+	position: relative;
 }
-.edtor input[type="text"]{
-	width: 82px;
-	height: 22px;
-	border: 2px solid #8eb0e7;
-	padding-left: 3px;
+.convert-list input[type=checkbox]{
+	position: absolute;
+	left: -25px;
+	top: 4px;
 }
-.edtor input[type="button"]{
-	width: 22px;
-	height: 22px;
-	margin: 2px 3px 0 4px;
+.convert-list .new-folder{
+	display: none;
 }
-.collision{
-	position:absolute;
-	left:0;
-	top:0;
-	background-color:rgba(0,0,0,0.1);
-	border:1px solid rgba(0,0,0,0.2);
+.convert-list span:nth-of-type(1){
+	float: left;
+	line-height: 20px;
+	margin-left: 30px;
 }
-#handle-folder span{
-	padding-right:5px;
+/*说明文档*/
+#bref{
+	width: 100%;
+	height: 664px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,0.1);
+	z-index: 9999;
+	overflow: hidden;
+	transition: 2s;
 }
-
-.treeBox{
-	width:520px;
-	height:326px;
-	position:absolute;
-	border:3px solid #999999;
-	margin:140px 330px;
-	background-color:#fff;
-	box-shadow: 0 2px 16px #999;
-	display:none;
+#bref p{
+	width: 400px;
+	max-height: 500px;
+	position: absolute;
+	left: 50%;
+	margin-left: -200px;
+	top: -200px;
+	font: 15px/20px "微软雅黑";
+	color: #3091F2;
+	background: #fff;
+	padding: 20px;
+	transition: 1s;
+	border-radius: 20px 20px;
+	transform: scale(0.5);
+	-webkit-transform: skew(180deg);
+	-webkit-transition: 1s;
+	-webkit-border-radius: 20px 20px;
+	-webkit-transform: scale(0.5);
 }
-.treeBox h5 span{
-	margin-right:5px;
-	font-size:16px;
-	font-weight:bold;
-	width:13px;
-	display:inline-block;
-	text-align:center;
+#bref span{
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	border: 1px solid #000;
+	top: 50%;
+	left: 50%;
+	/*margin-left: 211px;*/
+	border-radius: 10px 10px;
+	text-align: center;
+	font: 16px/20px "微软雅黑";
+	cursor: pointer;
+	display: none;
+	transition: 1s;
 }
-h5{
-	margin:0;
+#bref span:hover{
+	transform: rotate(360deg);
+	background: rgba(0,0,0,0.5);
+	color: #fff;
 }
-.treeBox h5{
-	height:32px;
-	font:14px/32px "微软雅黑";
-	border-top:1px solid #fff;
-	border-bottom:1px solid #fff;
+/*所有文件夹的菜单*/
+#tree-box{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background: rgba(0,0,0,0.1);
+	display: none;
+	z-index: 100;
 }
-.treeBox h5.active{
-	background:#e5f0fb;
-	border-color:#bbd4ef;
+#show-box{
+	position: absolute;
+	left: 50%;
+	top: 20%;
+	width:400px ;
+	height: 250px;
+	border: 1px solid #000;
+	background: #fff;
+	padding: 20px 10px 10px 20px;
+	/*overflow-y: scroll;*/
 }
-.treeHeader{
-	background-color:#f7f7f7;
-	border-bottom:1px solid #d3d3d3;
+#tree-list{
+	overflow-y: scroll;
+	height: 180px;
+	background: #fff;
+	/*padding: 10px;*/
 }
-.treeHeader span[class="fl"]{
-	height:40px;
-	font:bold 14px/40px '宋体';
-	color:#333333;
-	padding-left:14px;
+#tree-list h2{
+	font: 14px/16px "微软雅黑";
 }
-.treeBox .treeHeader .closeTreeBox{
-	height:40px;
-	line-height:40px;
-	padding-right:5px;
-	font-weight:bold;
-	width:30px;
-	text-align:center;
-	cursor:pointer;
+#tree-list ul{
+	padding-left: 20px;
 }
-.treeList{
-	height:200px;
-	margin:11px;
-	border:1px solid #f2f2f2;
-	overflow:auto;
+.tree-handle{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	padding: 20px 0;
+	margin-top: 20px;
+	font-size: 0px;
+	text-align: center;
+	border-top: 1px dashed #333;
+	background: #999;
 }
-.treeList ul{
-	padding-left:30px;
-	display:none;
+.tree-handle span{
+	display: inline-block;
+	padding: 5px 20px;
+	height: 20px;
+	text-align: center;
+	font: 16px/20px "微软雅黑";
+	border: 1px solid #000;
+	cursor: pointer;
+	border-radius: 5px;
+	background: #fff;
 }
-.treeList ul.show{
-	display:block;
+.tree-handle span:nth-of-type(1){
+	margin-right: 40px;
+	background: blue;
+	color: #fff;
 }
-.treeList ul.hide{
-	display:none;
+#move-sure{
+	/*margin-right: 10px;*/
 }
-.treeBtnBox{
-	padding:5px 70px 0;
+#tree-list li{
+	padding: 5px;
 }
-.treeBtnBox div{
-	height:35px;
-	border:1px solid #adacac;
-	font:14px/35px "微软雅黑";
-	width:127px;
-	text-align:center;
-	background-color: #eeeeef;
+#tree-list .hide{
+	display: none;
 }
-
-.treeBtnBox div.active{
-	background-color:#008bf5;
+#tree-list .show{
+	display: block;
 }
